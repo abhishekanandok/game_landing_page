@@ -87,30 +87,7 @@ export default function AudioManager({ children }: AudioManagerProps) {
     <div className="relative">
       {children}
       
-      {/* Audio Controls */}
-      <div className="fixed bottom-6 right-6 z-50 flex gap-3">
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={toggleAudio}
-          onMouseEnter={playHoverSound}
-          className="bg-black/70 backdrop-blur-sm border border-primary/30 rounded-full p-3 text-primary hover:bg-primary/20 transition-colors"
-          title={isPlaying ? 'Pause ambient music' : 'Play ambient music'}
-        >
-          {isPlaying ? '⏸️' : '▶️'}
-        </motion.button>
-        
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={toggleMute}
-          onMouseEnter={playHoverSound}
-          className="bg-black/70 backdrop-blur-sm border border-primary/30 rounded-full p-3 text-primary hover:bg-primary/20 transition-colors"
-          title={isMuted ? 'Unmute sounds' : 'Mute sounds'}
-        >
-          {isMuted ? '🔇' : '🔊'}
-        </motion.button>
-      </div>
+     
 
       {/* Audio Context Provider */}
       <AudioContext.Provider value={{ playHoverSound, playClickSound, playMagicSound, isMuted }}>

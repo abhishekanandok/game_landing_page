@@ -139,7 +139,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
               transition={{ delay: 0.2 }}
               className="mb-8"
             >
-              <h1 className="font-serif text-4xl md:text-6xl font-bold text-primary text-glow mb-4">
+              <h1 className="text-4xl md:text-6xl font-bold text-primary text-glow mb-4" style={{ fontFamily: '"Permanent Marker", cursive', textShadow: '3px 3px 0px rgba(0,0,0,0.4), 0 0 20px rgba(212, 175, 55, 0.6)', transform: 'rotate(-1deg)', letterSpacing: '2px' }}>
                 REALMS OF STRATEGY
               </h1>
               <p className="text-xl text-foreground/80">Preparing your adventure...</p>
@@ -173,6 +173,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="text-primary font-medium"
+                style={{ fontFamily: '"Permanent Marker", cursive', textShadow: '2px 2px 0px rgba(0,0,0,0.3)' }}
               >
                 {loadingText}
               </motion.p>
