@@ -281,7 +281,7 @@ export default function Home() {
 
 
       {/* Progression Systems Section - Next Level */}
-      <ScrollSection id="progression" className="py-32 px-4 bg-black relative overflow-hidden">
+      <ScrollSection id="progression" className="py-32 px-4  relative overflow-hidden">
         {/* Cinematic Video Background */}
         <div className="absolute inset-0 pointer-events-none">
           <video 
@@ -292,7 +292,7 @@ export default function Home() {
             playsInline
             className="w-full h-full object-cover opacity-20"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/10 to-black" />
+          <div className="absolute inset-0 bg-black/5" />
         </div>
 
         {/* Floating Particles */}
@@ -800,186 +800,398 @@ export default function Home() {
         </div>
       </ScrollSection>
 
-      {/* Game Features Highlight - 2x3 Grid as per PDF */}
-      <ScrollSection id="features" className="py-20 px-4 bg-gradient-to-b from-purple-950/20 to-black relative overflow-hidden">
-        {/* Magic Portal Background Effect */}
-        <div className="absolute top-1/2 left-1/4 w-96 h-96 magic-portal opacity-30" />
-        <div className="absolute top-1/3 right-1/4 w-96 h-96 magic-portal opacity-30" style={{ animationDelay: '5s' }} />
-        
-        <div className="max-w-7xl mx-auto relative z-10">
-          <h2 className="text-5xl font-bold text-center text-primary text-glow mb-16 fantasy-title" data-text="Game Features Highlight" style={{ fontFamily: '"Permanent Marker", cursive', textShadow: '3px 3px 0px rgba(0,0,0,0.4), 0 0 20px rgba(212, 175, 55, 0.6)', transform: 'rotate(-1deg)', letterSpacing: '2px' }}>
-            <span className="ancient-rune">🎮</span> Game Features Highlight <span className="ancient-rune">🏆</span>
-          </h2>
+      
 
-          {/* 2x3 Grid Layout */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              { 
-                icon: "🎁", 
-                title: "Treasure Chests", 
-                desc: "Random loot spawns during battles with tiered rewards and legendary drops."
-              },
-              { 
-                icon: "⚒️", 
-                title: "Crafting System", 
-                desc: "Combine items for powerful equipment with enhanced stats and unique effects."
-              },
-              { 
-                icon: "🧙‍♂️", 
-                title: "Multiple Classes", 
-                desc: "Master Berserker, Pyromancer, Reaper, and Ranger with distinct playstyles."
-              },
-              { 
-                icon: "🧩", 
-                title: "Strategic Depth", 
-                desc: "Resource management and tactical planning reward careful consideration."
-              },
-              { 
-                icon: "🔄", 
-                title: "Prestige Mechanics", 
-                desc: "Reset for permanent improvements and unlock new strategic options."
-              },
-              { 
-                icon: "💎", 
-                title: "Rich Rewards", 
-                desc: "Gold multipliers, rare items, and expansion cards await discovery."
-              }
-            ].map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ scale: 1.05, rotateY: 5 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="legendary-card p-8 transition-all duration-300 cursor-pointer text-center"
-                style={{ transformStyle: 'preserve-3d' }}
-              >
-                <div className="text-5xl mb-6 relative z-10">
-                  <motion.span
-                    className="ancient-rune"
-                    whileHover={{ scale: 1.2, rotate: 360 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    {feature.icon}
-                  </motion.span>
-                </div>
-                <h3 className="text-xl font-bold mb-4 relative z-10">
-                  <span className="enchanted-text" style={{ fontFamily: '"Permanent Marker", cursive', textShadow: '2px 2px 0px rgba(0,0,0,0.3)' }}>{feature.title}</span>
-                </h3>
-                <p className="text-foreground/80 leading-relaxed relative z-10">{feature.desc}</p>
-              </motion.div>
-            ))}
-          </div>
+      {/* Cinematic Outro Section - Enhanced */}
+      <section className="relative py-40 px-4 bg-gradient-to-b from-black via-purple-950/20 to-black overflow-hidden">
+        {/* Animated Background Grid */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'linear-gradient(rgba(212, 175, 55, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(212, 175, 55, 0.1) 1px, transparent 1px)',
+            backgroundSize: '50px 50px'
+          }} />
         </div>
-      </ScrollSection>
 
-      {/* Cinematic Outro Section (Scene 6) */}
-      <section className="relative py-32 px-4 bg-gradient-to-b from-black via-purple-950/10 to-black overflow-hidden mystical-fog dragon-scales">
-        {/* Falling embers and magical particles background */}
-        <div className="absolute inset-0">
-          {Array.from({ length: 20 }, (_, i) => (
+        {/* Floating Energy Orbs */}
+        <div className="absolute inset-0 pointer-events-none">
+          {Array.from({ length: 15 }, (_, i) => (
             <motion.div
               key={i}
-              className="absolute w-1 h-1 bg-primary rounded-full"
+              className="absolute rounded-full blur-xl"
               style={{
                 left: `${Math.random() * 100}%`,
-                top: `-10px`,
+                top: `${Math.random() * 100}%`,
+                width: `${Math.random() * 100 + 50}px`,
+                height: `${Math.random() * 100 + 50}px`,
+                background: i % 3 === 0 
+                  ? 'radial-gradient(circle, rgba(212, 175, 55, 0.3), transparent)' 
+                  : i % 3 === 1 
+                  ? 'radial-gradient(circle, rgba(168, 85, 247, 0.3), transparent)'
+                  : 'radial-gradient(circle, rgba(147, 197, 253, 0.3), transparent)'
               }}
               animate={{
-                y: [0, 800],
-                opacity: [0, 1, 0],
-                scale: [0, 1, 0]
+                y: [0, -50],
+                x: [0, Math.random() * 40 - 20],
+                opacity: [0.3, 0.6]
               }}
               transition={{
-                duration: Math.random() * 3 + 2,
+                duration: 5 + Math.random() * 3,
                 repeat: Infinity,
-                delay: Math.random() * 2,
-                ease: "linear"
+                repeatType: "reverse",
+                ease: "easeInOut",
+                delay: Math.random() * 2
               }}
             />
           ))}
         </div>
 
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          {/* Final tagline with cinematic fade */}
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          {/* Geometric Accent Lines */}
+          <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="h-px bg-gradient-to-r from-transparent via-primary to-transparent mb-12"
+          />
+
+          {/* Main Heading */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+            transition={{ duration: 1, ease: "easeOut" }}
           >
-            <h2 className="text-6xl md:text-7xl font-bold text-primary text-glow mb-8" style={{ fontFamily: '"Permanent Marker", cursive', textShadow: '3px 3px 0px rgba(0,0,0,0.4), 0 0 20px rgba(212, 175, 55, 0.6)', transform: 'rotate(-1deg)', letterSpacing: '2px' }}>
-              Prepare Your Heroes
+            <h2 className="text-6xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-yellow-400 to-primary mb-6" 
+              style={{ 
+                fontFamily: '"Permanent Marker", cursive',
+                textShadow: '0 0 40px rgba(212, 175, 55, 0.5)',
+                letterSpacing: '4px'
+              }}
+            >
+              Begin Your Journey
             </h2>
             <motion.p
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.2, delay: 0.3 }}
-              className="text-2xl md:text-3xl text-foreground/90 mb-12"
+              transition={{ duration: 1, delay: 0.3 }}
+              className="text-xl md:text-2xl text-foreground/70 mb-16 max-w-2xl mx-auto leading-relaxed"
             >
-              The Battle Awaits
+              Master strategy, collect legendary heroes, and dominate the battlefield
             </motion.p>
           </motion.div>
 
-          {/* Glowing rune icons with staggered fade */}
+          {/* Animated Geometric Icons */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.8 }}
-            className="flex justify-center gap-8 mb-12"
+            transition={{ duration: 1, delay: 0.6 }}
+            className="flex justify-center gap-10 mb-16"
           >
-            {['⚔️', '🛡️', '🔮', '👑'].map((rune, i) => (
-              <motion.div
-                key={i}
-                className="text-4xl text-primary ancient-rune"
-                initial={{ opacity: 0, scale: 0, rotateY: 180 }}
-                whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
-                transition={{ delay: 0.8 + i * 0.2, duration: 0.8 }}
-                whileHover={{ scale: 1.3, rotateY: 360 }}
-              >
-                {rune}
-              </motion.div>
-            ))}
+            {/* Sword Icon */}
+            <motion.div
+              initial={{ scale: 0, rotate: -180 }}
+              whileInView={{ scale: 1, rotate: 0 }}
+              transition={{ delay: 0.7, type: "spring", stiffness: 200 }}
+              whileHover={{ scale: 1.2, rotate: 15 }}
+              className="relative group"
+            >
+              <svg width="60" height="60" viewBox="0 0 60 60" className="drop-shadow-2xl">
+                <motion.path
+                  d="M30 5 L35 15 L30 55 L25 15 Z"
+                  fill="url(#swordGrad)"
+                  stroke="rgba(212, 175, 55, 0.8)"
+                  strokeWidth="2"
+                  animate={{ opacity: [0.7, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+                />
+                <circle cx="30" cy="15" r="5" fill="rgba(212, 175, 55, 0.5)" />
+                <defs>
+                  <linearGradient id="swordGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stopColor="rgba(212, 175, 55, 1)" />
+                    <stop offset="100%" stopColor="rgba(180, 140, 40, 1)" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              <motion.div 
+                className="absolute inset-0 bg-primary/20 rounded-full blur-xl"
+                animate={{ scale: [1, 1.5] }}
+                transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+              />
+            </motion.div>
+
+            {/* Shield Icon */}
+            <motion.div
+              initial={{ scale: 0, rotate: 180 }}
+              whileInView={{ scale: 1, rotate: 0 }}
+              transition={{ delay: 0.9, type: "spring", stiffness: 200 }}
+              whileHover={{ scale: 1.2, rotate: -15 }}
+              className="relative group"
+            >
+              <svg width="60" height="60" viewBox="0 0 60 60">
+                <motion.path
+                  d="M30 5 L50 15 L50 30 C50 45 30 55 30 55 C30 55 10 45 10 30 L10 15 Z"
+                  fill="url(#shieldGrad)"
+                  stroke="rgba(147, 197, 253, 0.8)"
+                  strokeWidth="2"
+                  animate={{ opacity: [0.7, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", delay: 0.5 }}
+                />
+                <defs>
+                  <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stopColor="rgba(147, 197, 253, 0.8)" />
+                    <stop offset="100%" stopColor="rgba(100, 140, 200, 0.8)" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              <motion.div 
+                className="absolute inset-0 bg-blue-400/20 rounded-full blur-xl"
+                animate={{ scale: [1, 1.5] }}
+                transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", delay: 0.5 }}
+              />
+            </motion.div>
+
+            {/* Crystal Icon */}
+            <motion.div
+              initial={{ scale: 0, rotate: -180 }}
+              whileInView={{ scale: 1, rotate: 0 }}
+              transition={{ delay: 1.1, type: "spring", stiffness: 200 }}
+              whileHover={{ scale: 1.2, rotate: 180 }}
+              className="relative group"
+            >
+              <svg width="60" height="60" viewBox="0 0 60 60">
+                <motion.path
+                  d="M30 5 L45 20 L40 50 L30 55 L20 50 L15 20 Z"
+                  fill="url(#crystalGrad)"
+                  stroke="rgba(168, 85, 247, 0.8)"
+                  strokeWidth="2"
+                  animate={{ opacity: [0.7, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", delay: 1 }}
+                />
+                <polygon points="30,15 35,25 30,35 25,25" fill="rgba(200, 150, 255, 0.5)" />
+                <defs>
+                  <linearGradient id="crystalGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stopColor="rgba(168, 85, 247, 0.8)" />
+                    <stop offset="100%" stopColor="rgba(130, 60, 200, 0.8)" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              <motion.div 
+                className="absolute inset-0 bg-purple-400/20 rounded-full blur-xl"
+                animate={{ scale: [1, 1.5] }}
+                transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", delay: 1 }}
+              />
+            </motion.div>
           </motion.div>
 
-          {/* Final CTA with shimmer effect */}
+          {/* CTA Buttons */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.2 }}
-            className="flex flex-col sm:flex-row gap-6 justify-center"
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
           >
-            <SoundButton 
-              soundType="magic" 
-              className="quest-button py-4 px-8 rounded-xl text-xl font-bold flex items-center gap-2 justify-center"
-              style={{ fontFamily: '"Permanent Marker", cursive', textShadow: '2px 2px 0px rgba(0,0,0,0.3)' }}
-            >
-              <span className="ancient-rune">⚔️</span>
-              <span>Begin Your Legend</span>
-            </SoundButton>
-            <SoundButton 
-              soundType="click" 
-              className="glass-panel border-2 border-primary/50 text-primary hover:bg-primary/10 py-4 px-8 rounded-xl text-xl font-bold transition-all duration-300 holographic crystal-glow flex items-center gap-2 justify-center"
-              style={{ fontFamily: '"Permanent Marker", cursive', textShadow: '2px 2px 0px rgba(0,0,0,0.3)' }}
-            >
-              <span className="ancient-rune">📋</span>
-              <span>View Chronicles</span>
-            </SoundButton>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <SoundButton 
+                soundType="magic" 
+                className="relative group quest-button py-5 px-10 rounded-2xl text-xl font-bold overflow-hidden"
+                style={{ fontFamily: '"Permanent Marker", cursive' }}
+              >
+                <span className="relative z-10 flex items-center gap-3">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8Z" />
+                  </svg>
+                  Start Playing
+                </span>
+                <motion.div 
+                  className="absolute inset-0 bg-gradient-to-r from-yellow-600/50 to-primary/50"
+                  animate={{ x: ['-100%', '100%'] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                />
+              </SoundButton>
+            </motion.div>
+
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <SoundButton 
+                soundType="click" 
+                className="relative group backdrop-blur-sm bg-white/5 border-2 border-primary/50 text-primary hover:bg-primary/10 py-5 px-10 rounded-2xl text-xl font-bold transition-all duration-300"
+                style={{ fontFamily: '"Permanent Marker", cursive' }}
+              >
+                <span className="flex items-center gap-3">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <path d="M3 9h18M9 21V9" />
+                  </svg>
+                  Learn More
+                </span>
+              </SoundButton>
+            </motion.div>
           </motion.div>
+
+          {/* Bottom Accent */}
+          <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            transition={{ duration: 1.2, delay: 1.5, ease: "easeOut" }}
+            className="h-px bg-gradient-to-r from-transparent via-primary to-transparent mt-16"
+          />
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-16 px-4 bg-black border-t border-border">
-        <div className="max-w-7xl mx-auto">
-          <div className="border-t border-border pt-8 text-center text-foreground/60">
+      {/* Footer - Enhanced */}
+      <footer className="relative bg-gradient-to-b from-black to-purple-950/20 border-t border-primary/20 overflow-hidden">
+        {/* Subtle Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(212, 175, 55, 0.3) 1px, transparent 0)',
+            backgroundSize: '40px 40px'
+          }} />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 py-16 relative z-10">
+          {/* Top Section */}
+          <div className="grid md:grid-cols-4 gap-12 mb-12">
+            {/* Brand Column */}
+            <motion.div 
+              className="md:col-span-2"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h3 className="text-3xl font-bold text-primary mb-4" style={{ fontFamily: '"Permanent Marker", cursive' }}>
+                Auto-Battler Chronicles
+              </h3>
+              <p className="text-foreground/60 mb-6 leading-relaxed max-w-md">
+                Master the ultimate strategic idle game. Build legendary teams, unlock ancient powers, and dominate the battlefield.
+              </p>
+              {/* Social Links */}
+              <div className="flex gap-4">
+                {[
+                  { icon: 'M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z', label: 'Twitter' },
+                  { icon: 'M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22', label: 'GitHub' },
+                  { icon: 'M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z', label: 'Facebook' },
+                ].map((social, i) => (
+                  <motion.a
+                    key={i}
+                    href="#"
+                    className="w-10 h-10 rounded-lg bg-white/5 border border-primary/20 flex items-center justify-center text-foreground/60 hover:text-primary hover:bg-primary/10 hover:border-primary/40 transition-all duration-300"
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 * i }}
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d={social.icon} />
+                    </svg>
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Quick Links */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <h4 className="text-lg font-bold text-foreground mb-4" style={{ fontFamily: '"Permanent Marker", cursive' }}>
+                Quick Links
+              </h4>
+              <ul className="space-y-3">
+                {['Gameplay', 'Progression', 'Features', 'Heroes'].map((link, i) => (
+                  <li key={i}>
+                    <motion.a
+                      href={`#${link.toLowerCase()}`}
+                      className="text-foreground/60 hover:text-primary transition-colors duration-300 flex items-center gap-2 group"
+                      whileHover={{ x: 5 }}
+                    >
+                      <span className="w-1 h-1 rounded-full bg-primary/50 group-hover:bg-primary transition-colors" />
+                      {link}
+                    </motion.a>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Resources */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <h4 className="text-lg font-bold text-foreground mb-4" style={{ fontFamily: '"Permanent Marker", cursive' }}>
+                Resources
+              </h4>
+              <ul className="space-y-3">
+                {['Community', 'Support', 'Updates', 'Privacy'].map((link, i) => (
+                  <li key={i}>
+                    <motion.a
+                      href="#"
+                      className="text-foreground/60 hover:text-primary transition-colors duration-300 flex items-center gap-2 group"
+                      whileHover={{ x: 5 }}
+                    >
+                      <span className="w-1 h-1 rounded-full bg-primary/50 group-hover:bg-primary transition-colors" />
+                      {link}
+                    </motion.a>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+
+          {/* Divider */}
+          <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent mb-8"
+          />
+
+          {/* Bottom Section */}
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <motion.p
+              className="text-foreground/50 text-sm"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              &copy; 2024 Auto-Battler Chronicles. Forge your destiny.
+              &copy; {new Date().getFullYear()} Auto-Battler Chronicles. All rights reserved. Forge your destiny.
             </motion.p>
+
+            <motion.div
+              className="flex gap-6 text-sm"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.6 }}
+            >
+              {['Terms', 'Privacy', 'Cookies'].map((item, i) => (
+                <a
+                  key={i}
+                  href="#"
+                  className="text-foreground/50 hover:text-primary transition-colors duration-300"
+                >
+                  {item}
+                </a>
+              ))}
+            </motion.div>
           </div>
+
+          {/* Decorative Elements */}
+          <motion.div
+            className="absolute -bottom-10 -right-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl"
+            animate={{ 
+              scale: [1, 1.2],
+              opacity: [0.3, 0.5]
+            }}
+            transition={{ duration: 4, repeat: Infinity, repeatType: "reverse" }}
+          />
+          <motion.div
+            className="absolute -top-10 -left-10 w-40 h-40 bg-purple-500/5 rounded-full blur-3xl"
+            animate={{ 
+              scale: [1, 1.2],
+              opacity: [0.3, 0.5]
+            }}
+            transition={{ duration: 5, repeat: Infinity, repeatType: "reverse", delay: 1 }}
+          />
         </div>
       </footer>
 
