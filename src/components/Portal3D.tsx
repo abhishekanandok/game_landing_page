@@ -77,7 +77,7 @@ function SmokeParticles() {
     return positions
   }, [])
 
-  useFrame((state) => {
+  useFrame(() => {
     if (smokeRef.current) {
       const positions = smokeRef.current.geometry.attributes.position.array as Float32Array
       for (let i = 0; i < positions.length; i += 3) {

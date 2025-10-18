@@ -509,7 +509,6 @@ export default function Home() {
                       className="relative w-16 h-16 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 border-4 border-blue-300/50"
                       initial={{ scale: 0, rotate: 180 }}
                       whileInView={{ scale: 1, rotate: 0 }}
-                      transition={{ delay: 0.5, type: "spring" }}
                       animate={{ 
                         boxShadow: [
                           '0 0 20px rgba(147, 197, 253, 0.5)',
@@ -517,6 +516,8 @@ export default function Home() {
                         ]
                       }}
                       transition={{ 
+                        delay: 0.5,
+                        type: "spring",
                         boxShadow: { duration: 2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }
                       }}
                       whileHover={{ scale: 1.15 }}
@@ -539,7 +540,6 @@ export default function Home() {
                       className="relative w-20 h-20 rounded-full bg-gradient-to-br from-primary to-yellow-600 border-4 border-primary/70"
                       initial={{ scale: 0, rotate: -180 }}
                       whileInView={{ scale: 1, rotate: 0 }}
-                      transition={{ delay: 0.8, type: "spring" }}
                       animate={{ 
                         boxShadow: [
                           '0 0 30px rgba(212, 175, 55, 0.6)',
@@ -548,6 +548,8 @@ export default function Home() {
                         scale: [1, 1.05]
                       }}
                       transition={{ 
+                        delay: 0.8,
+                        type: "spring",
                         boxShadow: { duration: 2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" },
                         scale: { duration: 2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }
                       }}
@@ -568,14 +570,15 @@ export default function Home() {
                       className="relative w-16 h-16 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 border-4 border-purple-300/50"
                       initial={{ scale: 0, rotate: 180 }}
                       whileInView={{ scale: 1, rotate: 0 }}
-                      transition={{ delay: 1.1, type: "spring" }}
                       animate={{ 
                         boxShadow: [
                           '0 0 20px rgba(168, 85, 247, 0.5)',
                           '0 0 40px rgba(168, 85, 247, 0.8)'
                         ]
                       }}
-                      transition={{ 
+                      transition={{
+                        delay: 1.1,
+                        type: "spring",
                         boxShadow: { duration: 2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }
                       }}
                       whileHover={{ scale: 1.15 }}
